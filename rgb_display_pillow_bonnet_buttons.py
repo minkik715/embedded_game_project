@@ -88,6 +88,7 @@ fnt = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 30)
 def mk_circle(x1,x2,y1,y2,plus):
 	while (y2 <= 240):
 		draw.ellipse((x1, y1, x2, y2), outline=button_outline, fill=udlr_fill)
+		draw.ellipse((x1+20, y1+20, x2+20, y2+20), outline=button_outline, fill=udlr_fill)
 		y1 = y1 + plus
 		y2 = y2 + plus
 		disp.image(image)
@@ -111,21 +112,7 @@ while(True):
 	y6 = 20
 	y7 = 40
 	y8 = 60
-	"""
-	while(y6<=240):
-		draw.ellipse((x1, y1 , x2, y2), outline=button_outline, fill=udlr_fill)
-		draw.ellipse((x3, y3 , x4, y4), outline=button_outline, fill=udlr_fill)
-		draw.ellipse((x5, y5 , x6, y6), outline=button_outline, fill=udlr_fill)
-		draw.ellipse((x7, y7 , x8, y8), outline=button_outline, fill=udlr_fill)
-		y1=y1+20
-		y2=y2+20
-		y3=y3+30
-		y4=y4+30
-		y5=y5+10
-		y6=y6+10
-		y7=y7+20
-		y8=y8+20
-	"""
+	
 	mk_circle(x1,x2,y1,y2,20)
 	mk_circle(x3,x4,y3,y4,10)
 	mk_circle(x5,x6,y5,y6,30)
