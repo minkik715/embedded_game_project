@@ -84,6 +84,9 @@ button_outline = "#FFFFFF"
 
 fnt = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 30)
 
+def random_location():
+	return random.randint(1,4)
+
 
 def mk_circle(x1,x2,y1,y2,plus):
 	while (y2 <= 240):
@@ -92,7 +95,7 @@ def mk_circle(x1,x2,y1,y2,plus):
 		y1 = y1 + plus
 		y2 = y2 + plus
 		disp.image(image)
-		draw.rectangle((0, 0, width, height), outline=0, fill=(255, 0, 0))
+		draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 		disp.image(image)
 
 while(True):
