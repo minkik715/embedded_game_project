@@ -114,9 +114,10 @@ while(True):
 		if not button_R.value:
 			ball_x1 += 20
 			ball_x2 += 20
-		
+		disp.image(image)
 		draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 		disp.image(image)
+		time.sleep(0.1)
 		
 	disp.image(image)
 	draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
