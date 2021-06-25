@@ -87,7 +87,8 @@ fnt = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 30)
 def random_location():
 	return random.randint(1,4)
 
-
+def control():
+	
 def mk_circle(x1,x2,y1,y2,plus):
 	while (y2 <= 240):
 		draw.ellipse((x1, y1, x2, y2), outline=button_outline, fill=udlr_fill)
@@ -103,7 +104,24 @@ while(True):
 	y1 = 0
 	y2 = 20
 	
-	mk_circle(x1,x2,y1,y2,20)
+	ball_x1 = 110
+	ball_x2 = 130
+	ball_y1 = 0
+	ball_y2 = 20
+	draw.ellipse((ball_x1, ball_y1, ball_x2, ball_y2), outline=button_outline, fill=button_fill)
+	while (y2 <= 240):
+		draw.ellipse((x1, y1, x2, y2), outline=button_outline, fill=udlr_fill)
+		y1 = y1 + 20
+		y2 = y2 + 20
+		disp.image(image)
+		draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
+		disp.image(image)
+	if not button_L.value:
+		ball_x1 -= 20
+		ball_x2 -= 20
+	if not button_R.value:
+		ball_x1 += 20
+		ball_x2 += 20
 	disp.image(image)
 	draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 	disp.image(image)
