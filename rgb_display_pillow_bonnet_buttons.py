@@ -112,7 +112,7 @@ while(True):
 	draw.ellipse((ball_x1, ball_y1, ball_x2, ball_y2), outline=button_outline, fill=button_fill)
 	if not button_L.value:
 		ball_x1 -= 20
-			ball_x2 -= 20
+		ball_x2 -= 20
 	if not button_R.value:
 		ball_x1 += 20
 		ball_x2 += 20
