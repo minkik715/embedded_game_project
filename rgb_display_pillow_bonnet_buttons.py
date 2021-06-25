@@ -104,8 +104,8 @@ while(True):
 	y2 = 20
 	ball_x1 = 110
 	ball_x2 = 130
-	ball_y1 = 0
-	ball_y2 = 20
+	ball_y1 = 210
+	ball_y2 = 230
 	while(y2 <= 240):
 		draw.ellipse((x1, y1, x2, y2), outline=button_outline, fill=udlr_fill)
 		y1 = y1 + 20
