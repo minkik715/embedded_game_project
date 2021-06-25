@@ -87,8 +87,7 @@ fnt = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 30)
 def random_location():
 	return random.randint(1,4)
 
-def control():
-	
+
 def mk_circle(x1,x2,y1,y2,plus):
 	while (y2 <= 240):
 		draw.ellipse((x1, y1, x2, y2), outline=button_outline, fill=udlr_fill)
