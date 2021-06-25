@@ -91,7 +91,6 @@ def random_location():
 def mk_circle(x1,x2,y1,y2,plus):
 	while (y2 <= 240):
 		draw.ellipse((x1, y1, x2, y2), outline=button_outline, fill=udlr_fill)
-		draw.ellipse((x1+20, y1+20, x2+20, y2+20), outline=button_outline, fill=udlr_fill)
 		y1 = y1 + plus
 		y2 = y2 + plus
 		disp.image(image)
@@ -106,7 +105,7 @@ while(True):
 	
 	mk_circle(x1,x2,y1,y2,20)
 	disp.image(image)
-	draw.rectangle((0, 0, width, height), outline=0, fill=(255, 0, 0))
+	draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 	disp.image(image)
 	time.sleep(0.01)
 
