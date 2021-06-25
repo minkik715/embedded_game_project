@@ -130,7 +130,7 @@ while(True):
 		disp.image(image)
 		draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 		disp.image(image)
-		time.sleep(0.1)
+		time.sleep(0.01)
 		
 	disp.image(image)
 	draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
