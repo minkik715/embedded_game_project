@@ -99,27 +99,12 @@ def mk_circle(x1,x2,y1,y2,plus):
 		disp.image(image)
 
 while(True):
-	x1 = 80
-	x2 = 100
+	x1 = random.randint(0, 180)
+	x2 = x1 + 20
 	y1 = 0
 	y2 = 20
-	x3 = 20
-	x4 = 40
-	y3 = 40
-	y4 = 60
-	x5 = 120
-	x6 = 140
-	x7 = 180
-	x8 = 200
-	y5 = 0
-	y6 = 20
-	y7 = 40
-	y8 = 60
 	
 	mk_circle(x1,x2,y1,y2,20)
-	mk_circle(x3,x4,y3,y4,10)
-	mk_circle(x5,x6,y5,y6,30)
-	mk_circle(x7,x8,y7,y8,40)
 	disp.image(image)
 	draw.rectangle((0, 0, width, height), outline=0, fill=(255, 0, 0))
 	disp.image(image)
