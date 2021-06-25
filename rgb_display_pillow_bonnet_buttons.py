@@ -121,8 +121,7 @@ while(True):
 		y2 = 20
 		x1 = random.randint(0,220)
 		x2 = x1+20
-		
-		
+			
 	disp.image(image)
 	draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 	disp.image(image)
