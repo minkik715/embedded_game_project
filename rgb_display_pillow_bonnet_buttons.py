@@ -106,10 +106,8 @@ while(True):
 	ball_x2 = 130
 	ball_y1 = 210
 	ball_y2 = 230
-	while(y2 <= 240):
+	while(True):
 		draw.ellipse((x1, y1, x2, y2), outline=button_outline, fill=udlr_fill)
-		y1 = y1 + 20
-		y2 = y2 + 20
 		disp.image(image)
 		draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 		disp.image(image)
@@ -120,6 +118,15 @@ while(True):
 		if not button_R.value:
 			ball_x1 += 20
 			ball_x2 += 20
+		if y2 != 240:
+			y1 = y1 +20
+			y2 = y2 +20
+		else:
+			y1 = 0
+			y2 = 20
+			x1 = random.randint(0,220)
+			x2 = x1+20
+		
 		disp.image(image)
 		draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 		disp.image(image)
