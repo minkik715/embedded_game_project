@@ -145,6 +145,6 @@ def play_game(x1,x2,y1,y2,speed,level):
 	disp.image(image)
 	return 0
 
-if(play_game(x1,x2,y1,y2,20,1)):
-   play_game(x1,x2,y1,y2,40,2)
+if(play_game(x1,x2,y1,y2,40,1)):
+   play_game(x1,x2,y1,y2,60,2)
 	
