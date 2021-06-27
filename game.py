@@ -131,6 +131,6 @@ while(True):
 		y2 = 20
 		x1 = random.randint(0,220)
 		x2 = x1+20
-    draw.text((20, 150), "Game Over", font=fnt, fill=rcolor)
-    draw.text((20, 150), "Score:", font=fnt, fill=rcolor)
-    draw.text((150, 180), score, font=fnt, fill=rcolor)
+draw.text((20, 150), "Game Over", font=fnt, fill=udlr_fill)
+draw.text((20, 150), "Score:", font=fnt, fill=udlr_fill)
+draw.text((150, 180), score, font=fnt, fill=udlr_fill)
