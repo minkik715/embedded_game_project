@@ -87,10 +87,10 @@ def random_location():
 	return random.randint(1,4)
 
 x1 = random.randint(0, 180)
-size = random.randint(20,40)
+size = random.randint(20,60)
 x2 = x1+size
 y1 = 0
-y2 = 20
+y2 = y1 + size
 
 def play_game(x1,x2,y1,y2,speed,level,score):
 	ball_x1 = 110
@@ -127,10 +127,10 @@ def play_game(x1,x2,y1,y2,speed,level,score):
 			y2 = y2 +speed
 		else:
 			score += 10
-			y1 = 0
-			y2 = 20
-			x1 = random.randint(0,220)
 			size = random.randint(20,40)
+			y1 = 0
+			y2 = y1+size
+			x1 = random.randint(0,220)
 			x2 = x1+size
 	draw.text((20, 20), "Game Over", font=fnt, fill=udlr_fill)
 	draw.text((40, 60), "Score:", font=fnt, fill=udlr_fill)
