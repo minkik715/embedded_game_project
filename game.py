@@ -103,6 +103,7 @@ ball_x1 = 110
 ball_x2 = 130
 ball_y1 = 210
 ball_y2 = 230
+score = 0
 while(True):
 	draw.ellipse((x1, y1, x2, y2), outline=button_outline, fill=udlr_fill)
 	draw.ellipse((ball_x1, ball_y1, ball_x2, ball_y2), outline=button_outline, fill=button_fill)
@@ -111,6 +112,7 @@ while(True):
 	disp.image(image)
 	if(x2 > ball_x1 and x2 < ball_x2 and y2 > ball_y1):
 		break
+		
 	if(x1 < ball_x2 and x2 > ball_x2 and y2 > ball_y1):
 		break
 
@@ -124,7 +126,11 @@ while(True):
 		y1 = y1 +20
 		y2 = y2 +20
 	else:
+		score += 10
 		y1 = 0
 		y2 = 20
 		x1 = random.randint(0,220)
 		x2 = x1+20
+    draw.text((20, 150), "Game Over", font=fnt, fill=rcolor)
+    draw.text((20, 150), "Score:", font=fnt, fill=rcolor)
+    draw.text((150, 180), score, font=fnt, fill=rcolor)
