@@ -123,8 +123,8 @@ while(True):
 		ball_x1 += 20
 		ball_x2 += 20
 	if y2 != 240:
-		y1 = y1 +20
-		y2 = y2 +20
+		y1 = y1 +40
+		y2 = y2 +40
 	else:
 		score += 10
 		y1 = 0
@@ -133,5 +133,5 @@ while(True):
 		x2 = x1+20
 draw.text((20, 20), "Game Over", font=fnt, fill=udlr_fill)
 draw.text((40, 60), "Score:", font=fnt, fill=udlr_fill)
-draw.text((100, 60), str(score), font=fnt, fill=udlr_fill)
+draw.text((150, 60), str(score), font=fnt, fill=udlr_fill)
 disp.image(image)
