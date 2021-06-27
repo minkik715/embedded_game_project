@@ -220,12 +220,34 @@ if not button_A.value:
 		score = play_game(x1,x2,y1,y2,60,2,score)
 		if(score):
 			score = play_game(x1,x2,y1,y2,60,3,score)
-while True:
+	            	draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
+            		disp.image(image)
+B_color = "#FF00FF"
+I_color = udlr_fill
+A_color = udlr_fill
+E_color = udlr_fill
+color_list = [B_color, I_color, A_color, E_color]
+def intro(B_color, I_color , A_color , E_color):
     draw.text((20, 20), "Welcome", font=fnt, fill=udlr_fill)
     draw.text((40, 50), "Avoid balls:", font=fnt, fill=udlr_fill)
-    draw.text((20, 80), "Beginner", font=fnt, fill=udlr_fill)
-    draw.text((20, 110), "Intermediate ", font=fnt, fill=udlr_fill)
-    draw.text((20, 140), "Advanced ", font=fnt, fill=udlr_fill)
-    draw.text((20, 170), "Expert", font=fnt, fill=udlr_fill)
-    draw.text((20, 200), "Hell", font=fnt, fill=udlr_fill)
+    draw.text((20, 80), "Beginner", font=fnt, fill=B_color)
+    draw.text((20, 110), "Intermediate ", font=fnt, fill=I_color)
+    draw.text((20, 140), "Advanced ", font=fnt, fill=A_color)
+    draw.text((20, 170), "Expert", font=fnt, fill=E_color)
+while True:
+    intro(B_color, I_color , A_color , E_color)
     disp.image(image)
+    tmp = 100
+    if not button_U.value:
+        color = color_list[tmp%4]
+        color_list[tmp % 4] = color_list[tmp%4-1]
+        color_list[tmp%4-1] = color
+        tmp = tmp - 1
+    if not button_D.value:
+        color = color_list[tmp % 4]
+        color_list[tmp % 4] = color_list[tmp % 4 + 1]
+        color_list[tmp % 4 + 1] = color
+        tmp = tmp + 1
+
+
+
