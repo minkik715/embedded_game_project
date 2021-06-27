@@ -196,10 +196,17 @@ def play_game(x1,x2,y1,y2,speed,level,score):
 	draw.text((20, 20), "Game Over", font=fnt, fill=udlr_fill)
 	draw.text((40, 60), "Score:", font=fnt, fill=udlr_fill)
 	draw.text((150, 60), str(score), font=fnt, fill=udlr_fill)
+	draw.text((150, 60), "play Again", font=fnt, fill=udlr_fill)
 	disp.image(image)
 	return 0
 score = play_game(x1,x2,y1,y2,40,1,0) 
 if(score):
+	score = play_game(x1,x2,y1,y2,60,2,score)
+	if(score):
+		score = play_game(x1,x2,y1,y2,60,3,score)
+
+if not button_A.value:
+	if(score):
 	score = play_game(x1,x2,y1,y2,60,2,score)
 	if(score):
 		score = play_game(x1,x2,y1,y2,60,3,score)
