@@ -85,15 +85,33 @@ fnt = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 30)
 
 def random_location():
 	return random.randint(1,4)
-
+# SET
 x1 = random.randint(0, 180)
 size = random.randint(20,60)
 x2 = x1+size
 y1 = 0
 y2 = y1 + size
+
+
+
+
 def remove_screen():
 	draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 	disp.image(image)
+
+
+	
+
+def game_end(score):
+	draw.text((20, 20), "Game Over:", font=fnt, fill=udlr_fill)
+	draw.text((20, 60), "Score:", font=fnt, fill=udlr_fill)
+	draw.text((100, 60), str(score), font=fnt, fill=udlr_fill)
+	disp.image(image)
+	time.sleep(4)
+	remove_screen()
+	
+	
+	
 def game_begin_inter(x1,x2,y1,y2,speed,name):
 	ball_x1 = 110
 	ball_x2 = 130
@@ -106,7 +124,7 @@ def game_begin_inter(x1,x2,y1,y2,speed,name):
 	while(True):
 		rcolor = tuple(int(x * 255) for x in hsv_to_rgb(random.random(), 1, 1))
 		draw.ellipse((x1, y1, x2, y2), outline=button_outline, fill=rcolor)
-		draw.ellipse((ball_x1, ball_y1, ball_x2, ball_y2), outline=button_outline, fill=rcolor)
+		draw.ellipse((ball_x1, ball_y1, ball_x2, ball_y2), outline=button_outline, fill=udlr_fill)
 		disp.image(image)
 		draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 		disp.image(image)
@@ -271,36 +289,24 @@ while True:
 	if not button_A.value:
 		remove_screen()
 		if(tmp%4 == 0):
-			name = "beginner"
+			name = "Beginner_Ver"
 			score = game_begin_inter(x1,x2,y1,y2,20,name)
-			draw.text((20, 20), "score", font=fnt, fill=udlr_fill)
-			draw.text((100, 20), str(score), font=fnt, fill=udlr_fill)
-			disp.image(image)
-			time.sleep(4)
+			game_end(score)
 			remove_screen()
 		if(tmp%4 == 1):
-			name = "inter"
+			name = "Inter_Ver"
 			score = game_begin_inter(x1,x2,y1,y2,60,name)
-			draw.text((20, 20), "score", font=fnt, fill=udlr_fill)
-			draw.text((100, 20), str(score), font=fnt, fill=udlr_fill)
-			disp.image(image)
-			time.sleep(4)
+			game_end(score)
 			remove_screen()
 		if(tmp%4 == 2):
-			name = "advance"
+			name = "Advance_Ver"
 			score = game_begin_inter(x1,x2,y1,y2,60,name)
-			draw.text((20, 20), "score", font=fnt, fill=udlr_fill)
-			draw.text((100, 20), str(score), font=fnt, fill=udlr_fill)
-			disp.image(image)
-			time.sleep(4)
+			game_end(score)
 			remove_screen()
 		if(tmp%4 == 3):
-			name = "expert"
+			name = "Expert_Ver"
 			score = game_begin_inter(x1,x2,y1,y2,60,name)
-			draw.text((20, 20), "score", font=fnt, fill=udlr_fill)
-			draw.text((100, 20), str(score), font=fnt, fill=udlr_fill)
-			disp.image(image)
-			time.sleep(4)
+			game_end(score)
 			remove_screen()
 		
 
