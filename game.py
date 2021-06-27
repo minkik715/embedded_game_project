@@ -206,7 +206,6 @@ if(score):
 		score = play_game(x1,x2,y1,y2,60,3,score)
 
 if not button_A.value:
-	if(score):
 	score = play_game(x1,x2,y1,y2,60,2,score)
 	if(score):
 		score = play_game(x1,x2,y1,y2,60,3,score)
