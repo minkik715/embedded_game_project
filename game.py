@@ -199,6 +199,6 @@ def play_game(x1,x2,y1,y2,speed,level,score):
 	return 0
 score = play_game(x1,x2,y1,y2,40,1,0) 
 if(score):
-  	 score = play_game(x1,x2,y1,y2,60,2,score)
-  	 if(score):
+	score = play_game(x1,x2,y1,y2,60,2,score)
+	if(score):
 		score = play_game(x1,x2,y1,y2,60,3,score)
