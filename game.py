@@ -91,7 +91,12 @@ size = random.randint(20,60)
 x2 = x1+size
 y1 = 0
 y2 = y1 + size
-
+B_color = "#FF00FF"
+I_color = udlr_fill
+A_color = udlr_fill
+E_color = udlr_fill
+tmp = 100
+color_list = [B_color, I_color, A_color, E_color]
 
 
 
@@ -133,6 +138,25 @@ def game_begin_inter(x1,x2,y1,y2,speed,name):
 		if(x1 <= ball_x2 and x1 >= ball_x1 and y2 >= ball_y1 and y2 <= ball_y2):
 			time.sleep(1)
 			return score
+		
+		if(x1 >= ball_x1 and x2 <= ball_x2 and y2 >= ball_y1 and y2 <= ball_y2):
+			time.sleep(1)
+			return score
+		if(y1 <= ball_y1 and y2 <= ball_y2 and x2 >= ball_x1 and x2 <= ball_x2):
+			time.sleep(1)
+			return score
+		if(y1 <= ball_y2 and y1 >= ball_y2 and x2 >= ball_x1 and x1 <= ball_x1):
+			time.sleep(1)
+			return score
+		if(x1 >= ball_x1 and x2 <= ball_x2 and y1 >= ball_y2 and y2 >= ball_y2):
+			time.sleep(1)
+			return score
+		if(x1 <= ball_x2 and x1 >= ball_x1 and  y1 >= ball_y2 and y2 >= ball_y2):
+			time.sleep(1)
+			return score
+		if(y1 <= ball_y1 and y2 <= ball_y2 and x1 <= ball_x2 and x1 >= ball_x1):
+			time.sleep(1)
+			return score
 		if not button_L.value:
 			ball_x1 -= 20
 			ball_x2 -= 20
@@ -159,12 +183,7 @@ def game_begin_inter(x1,x2,y1,y2,speed,name):
 		time.sleep(0.01)
 	
 
-B_color = "#FF00FF"
-I_color = udlr_fill
-A_color = udlr_fill
-E_color = udlr_fill
-tmp = 100
-color_list = [B_color, I_color, A_color, E_color]
+
 def intro(B_color, I_color , A_color , E_color):
 	draw.text((20, 20), "Welcome", font=fnt, fill=udlr_fill)
 	draw.text((20, 50), "Avoid balls", font=fnt, fill=udlr_fill)
@@ -172,6 +191,10 @@ def intro(B_color, I_color , A_color , E_color):
 	draw.text((20, 110), "Intermediate ", font=fnt, fill=I_color)
 	draw.text((20, 140), "Advanced ", font=fnt, fill=A_color)
 	draw.text((20, 170), "Expert", font=fnt, fill=E_color)
+	
+	
+	
+# main
 while True:
 	intro(color_list[0], color_list[1] , color_list[2] , color_list[3])
 	disp.image(image)
