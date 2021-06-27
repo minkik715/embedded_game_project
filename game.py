@@ -226,14 +226,14 @@ while True:
 	disp.image(image)
 	if not button_U.value:
 		color = color_list[tmp%4]
-		color_list[tmp % 4] = color_list[tmp-1%4]
-		color_list[tmp-1%4] = color
+		color_list[tmp % 4] = color_list[(tmp-1)%4]
+		color_list[(tmp-1)%4] = color
 		tmp = tmp - 1
 
 	if not button_D.value:
 		color = color_list[tmp % 4]
-		color_list[tmp % 4] = color_list[tmp+1 % 4]
-		color_list[tmp+1 % 4] = color
+		color_list[tmp % 4] = color_list[(tmp+1) % 4]
+		color_list[(tmp+1) % 4] = color
 		tmp = tmp + 1
 
 
