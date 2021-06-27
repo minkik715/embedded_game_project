@@ -99,39 +99,52 @@ x1 = random.randint(0, 180)
 x2 = x1 + 20
 y1 = 0
 y2 = 20
-ball_x1 = 110
-ball_x2 = 130
-ball_y1 = 210
-ball_y2 = 230
-score = 0
-while(True):
-	draw.ellipse((x1, y1, x2, y2), outline=button_outline, fill=udlr_fill)
-	draw.ellipse((ball_x1, ball_y1, ball_x2, ball_y2), outline=button_outline, fill=button_fill)
-	disp.image(image)
-	draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
-	disp.image(image)
-	if(x2 > ball_x1 and x2 < ball_x2 and y2 > ball_y1):
-		break
-		
-	if(x1 < ball_x2 and x2 > ball_x2 and y2 > ball_y1):
-		break
 
-	if not button_L.value:
-		ball_x1 -= 20
-		ball_x2 -= 20
-	if not button_R.value:
-		ball_x1 += 20
-		ball_x2 += 20
-	if y2 <= 240:
-		y1 = y1 +40
-		y2 = y2 +40
-	else:
-		score += 10
-		y1 = 0
-		y2 = 20
-		x1 = random.randint(0,220)
-		x2 = x1+20
-draw.text((20, 20), "Game Over", font=fnt, fill=udlr_fill)
-draw.text((40, 60), "Score:", font=fnt, fill=udlr_fill)
-draw.text((150, 60), str(score), font=fnt, fill=udlr_fill)
-disp.image(image)
+def play_game(x1,x2,y1,y2,speed,level):
+	ball_x1 = 110
+	ball_x2 = 130
+	ball_y1 = 210
+	ball_y2 = 230
+	score = 0
+	draw.text((20, 20), "Level", font=fnt, fill=udlr_fill)
+	draw.text((80, 20), str(level), font=fnt, fill=udlr_fill)
+	time.sleep(1)
+	while(True):
+		draw.ellipse((x1, y1, x2, y2), outline=button_outline, fill=udlr_fill)
+		draw.ellipse((ball_x1, ball_y1, ball_x2, ball_y2), outline=button_outline, fill=button_fill)
+		disp.image(image)
+		draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
+		disp.image(image)
+		if(x2 > ball_x1 and x2 < ball_x2 and y2 > ball_y1):
+			break
+			
+		if(x1 < ball_x2 and x2 > ball_x2 and y2 > ball_y1):
+			break
+	
+		if (level = 1 and score ==200):
+			break
+			return 1
+		if not button_L.value:
+			ball_x1 -= 20
+			ball_x2 -= 20
+		if not button_R.value:
+			ball_x1 += 20
+			ball_x2 += 20
+		if y2 <= 240:
+			y1 = y1 +speed
+			y2 = y2 +speed
+		else:
+			score += 10
+			y1 = 0
+			y2 = 20
+			x1 = random.randint(0,220)
+			x2 = x1+20
+	draw.text((20, 20), "Game Over", font=fnt, fill=udlr_fill)
+	draw.text((40, 60), "Score:", font=fnt, fill=udlr_fill)
+	draw.text((150, 60), str(score), font=fnt, fill=udlr_fill)
+	disp.image(image)
+	return 0
+
+if(play_game(x1,x2,y1,y2,20,1):
+   play_game(x1,x2,y1,y2,40,2)
+	
