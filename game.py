@@ -236,11 +236,15 @@ while True:
 		color_list[(tmp+1) % 4] = color
 		tmp = tmp + 1
 	if not button_A.value:
+		draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
+		disp.image(image)
 		score = play_game(x1,x2,y1,y2,40,1,0) 
 		if(score):
 			score = play_game(x1,x2,y1,y2,60,2,score)
 			if(score):
 				score = play_game(x1,x2,y1,y2,60,3,score)
+		draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
+		disp.image(image)
 
 
 
