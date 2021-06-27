@@ -122,7 +122,7 @@ while(True):
 	if not button_R.value:
 		ball_x1 += 20
 		ball_x2 += 20
-	if y2 != 240:
+	if y2 <= 240:
 		y1 = y1 +40
 		y2 = y2 +40
 	else:
