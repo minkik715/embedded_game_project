@@ -132,7 +132,7 @@ def play_game(x1,x2,y1,y2,speed,level,score):
 			if not button_R.value:
 				ball_x1 += 20
 				ball_x2 += 20
-			if y2 <= 240:
+			if y1 <= 240:
 				y1 = y1 +speed
 				y2 = y2 +speed
 			else:
@@ -144,7 +144,7 @@ def play_game(x1,x2,y1,y2,speed,level,score):
 				x2 = x1+size
 		else:
 			draw.ellipse((x1, y1, x2, y2), outline=button_outline, fill=udlr_fill)
-			if(x3< x2 and x4 < x2 and y3< y1 and y4 < y2):
+			if(y4 < y2):
 				draw.ellipse((x3, y3, x4, y4), outline=button_outline, fill=udlr_fill)
 			draw.ellipse((ball_x1, ball_y1, ball_x2, ball_y2), outline=button_outline, fill=button_fill)
 			disp.image(image)
