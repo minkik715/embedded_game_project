@@ -91,13 +91,15 @@ size = random.randint(20,60)
 x2 = x1+size
 y1 = 0
 y2 = y1 + size
-
-def game_begin_inter(x1,x2,y1,y2,speed):
+def remove_screen():
+	draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
+	disp.image(image)
+def game_begin_inter(x1,x2,y1,y2,speed,name):
 	ball_x1 = 110
 	ball_x2 = 130
 	ball_y1 = 210
 	ball_y2 = 230
-	draw.text((20, 20), "Beginner Version", font=fnt, fill=udlr_fill)
+	draw.text((0, 20), "name", font=fnt, fill=udlr_fill)
 	disp.image(image)
 	time.sleep(2)
 	score = 0
@@ -267,12 +269,39 @@ while True:
 		color_list[(tmp+1) % 4] = color
 		tmp = tmp + 1
 	if not button_A.value:
-		draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
-		disp.image(image)
-		score = game_begin_inter(x1,x2,y1,y2,20)
-		draw.text((20, 20), "score", font=fnt, fill=udlr_fill)
-		draw.text((100, 20), str(score), font=fnt, fill=udlr_fill)
-		time.sleep(4)
+		remove_screen()
+		if(tmp%4 == 0):
+			name = "beginner"
+			score = game_begin_inter(x1,x2,y1,y2,20,name)
+			draw.text((20, 20), "score", font=fnt, fill=udlr_fill)
+			draw.text((100, 20), str(score), font=fnt, fill=udlr_fill)
+			disp.image(image)
+			time.sleep(4)
+			remove_screen()
+		if(tmp%4 == 1):
+			name = "inter"
+			score = game_begin_inter(x1,x2,y1,y2,60,name)
+			draw.text((20, 20), "score", font=fnt, fill=udlr_fill)
+			draw.text((100, 20), str(score), font=fnt, fill=udlr_fill)
+			disp.image(image)
+			time.sleep(4)
+			remove_screen()
+		if(tmp%4 == 2):
+			name = "advance"
+			score = game_begin_inter(x1,x2,y1,y2,60,name)
+			draw.text((20, 20), "score", font=fnt, fill=udlr_fill)
+			draw.text((100, 20), str(score), font=fnt, fill=udlr_fill)
+			disp.image(image)
+			time.sleep(4)
+			remove_screen()
+		if(tmp%4 == 3):
+			name = "expert"
+			score = game_begin_inter(x1,x2,y1,y2,60,name)
+			draw.text((20, 20), "score", font=fnt, fill=udlr_fill)
+			draw.text((100, 20), str(score), font=fnt, fill=udlr_fill)
+			disp.image(image)
+			time.sleep(4)
+			remove_screen()
 		
 
 
