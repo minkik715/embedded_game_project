@@ -150,6 +150,7 @@ def game_begin_inter(x1,x2,y1,y2,speed,name):
 			x1 = random.randint(0,220)
 			x2 = x1+size
 		remove_screen()
+		time.sleep(0.01)
 	
 
 B_color = "#FF00FF"
