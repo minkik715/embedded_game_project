@@ -86,17 +86,9 @@ fnt = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 30)
 def random_location():
 	return random.randint(1,4)
 
-
-def mk_circle(x1,x2,y1,y2,plus):
-	while (y2 <= 240):
-		draw.ellipse((x1, y1, x2, y2), outline=button_outline, fill=udlr_fill)
-		y1 = y1 + plus
-		y2 = y2 + plus
-		disp.image(image)
-		draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
-		disp.image(image)
 x1 = random.randint(0, 180)
-x2 = x1 + 20
+size = random.randint(20,40)
+x2 = x1+size
 y1 = 0
 y2 = 20
 
@@ -106,7 +98,7 @@ def play_game(x1,x2,y1,y2,speed,level,score):
 	ball_y1 = 210
 	ball_y2 = 230
 	draw.text((20, 20), "Level", font=fnt, fill=udlr_fill)
-	draw.text((80, 20), str(level), font=fnt, fill=udlr_fill)
+	draw.text((150, 20), str(level), font=fnt, fill=udlr_fill)
 	disp.image(image)
 	time.sleep(2)
 	while(True):
@@ -134,11 +126,12 @@ def play_game(x1,x2,y1,y2,speed,level,score):
 			y1 = y1 +speed
 			y2 = y2 +speed
 		else:
-			score += 10
+		 	score += 10
 			y1 = 0
 			y2 = 20
 			x1 = random.randint(0,220)
-			x2 = x1+20
+			size = random.randint(20,40)
+			x2 = x1+size
 	draw.text((20, 20), "Game Over", font=fnt, fill=udlr_fill)
 	draw.text((40, 60), "Score:", font=fnt, fill=udlr_fill)
 	draw.text((150, 60), str(score), font=fnt, fill=udlr_fill)
