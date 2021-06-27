@@ -103,9 +103,9 @@ def remove_screen():
 	
 
 def game_end(score):
-	draw.text((20, 20), "Game Over:", font=fnt, fill=udlr_fill)
+	draw.text((20, 20), "Game Over", font=fnt, fill=udlr_fill)
 	draw.text((20, 60), "Score:", font=fnt, fill=udlr_fill)
-	draw.text((100, 60), str(score), font=fnt, fill=udlr_fill)
+	draw.text((150, 60), str(score), font=fnt, fill=udlr_fill)
 	disp.image(image)
 	time.sleep(4)
 	remove_screen()
@@ -117,7 +117,7 @@ def game_begin_inter(x1,x2,y1,y2,speed,name):
 	ball_x2 = 130
 	ball_y1 = 210
 	ball_y2 = 230
-	draw.text((0, 20), name, font=fnt, fill=udlr_fill)
+	draw.text((30, 50), name, font=fnt, fill=udlr_fill)
 	disp.image(image)
 	time.sleep(2)
 	score = 0
@@ -125,8 +125,6 @@ def game_begin_inter(x1,x2,y1,y2,speed,name):
 		rcolor = tuple(int(x * 255) for x in hsv_to_rgb(random.random(), 1, 1))
 		draw.ellipse((x1, y1, x2, y2), outline=button_outline, fill=rcolor)
 		draw.ellipse((ball_x1, ball_y1, ball_x2, ball_y2), outline=button_outline, fill=udlr_fill)
-		disp.image(image)
-		draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 		disp.image(image)
 		if(x2 > ball_x1 and x2 < ball_x2 and y2 > ball_y1):
 			time.sleep(1)
@@ -151,114 +149,9 @@ def game_begin_inter(x1,x2,y1,y2,speed,name):
 			y2 = y1+size
 			x1 = random.randint(0,220)
 			x2 = x1+size
+		def remove_screen():
 	
-def play_game(x1,x2,y1,y2,speed,level,score):
-	ball_x1 = 110
-	ball_x2 = 130
-	ball_y1 = 210
-	ball_y2 = 230
-	draw.text((20, 20), "Level", font=fnt, fill=udlr_fill)
-	draw.text((100, 20), str(level), font=fnt, fill=udlr_fill)
-	disp.image(image)
-	time.sleep(2)
-	size = random.randint(20,40)
-	y3 = 0
-	y4 = y3+size
-	x3 = random.randint(0,220)
-	x4 = x3+size
-	while(True):
-		if(level <=2):
-			draw.ellipse((x1, y1, x2, y2), outline=button_outline, fill=udlr_fill)
-			draw.ellipse((ball_x1, ball_y1, ball_x2, ball_y2), outline=button_outline, fill=button_fill)
-			disp.image(image)
-			draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
-			disp.image(image)
-			if(x2 > ball_x1 and x2 < ball_x2 and y2 > ball_y1):
-				time.sleep(1)
-				break
 
-			if(x1 < ball_x2 and x2 > ball_x2 and y2 > ball_y1):
-				time.sleep(1)
-				break
-
-			if (level == 1 and score ==200):
-				return score
-			if (level == 2 and score == 600):
-				return score
-
-			if not button_L.value:
-				ball_x1 -= 20
-				ball_x2 -= 20
-			if not button_R.value:
-				ball_x1 += 20
-				ball_x2 += 20
-			if y1 <= 240:
-				y1 = y1 +speed
-				y2 = y2 +speed
-			else:
-				score += 10
-				size = random.randint(20,40)
-				y1 = 0
-				y2 = y1+size
-				x1 = random.randint(0,220)
-				x2 = x1+size
-		else:
-			draw.ellipse((x1, y1, x2, y2), outline=button_outline, fill=udlr_fill)
-			if(random.randint(0,1)):
-				draw.ellipse((x3, y3, x4, y4), outline=button_outline, fill=udlr_fill)
-			draw.ellipse((ball_x1, ball_y1, ball_x2, ball_y2), outline=button_outline, fill=button_fill)
-			disp.image(image)
-			draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
-			disp.image(image)
-			if(x2 > ball_x1 and x2 < ball_x2 and y2 > ball_y1):
-				time.sleep(1)
-				break
-
-			if(x1 < ball_x2 and x2 > ball_x2 and y2 > ball_y1):
-				time.sleep(1)
-				break
-			if(x4 > ball_x1 and x4 < ball_x2 and y4 > ball_y1):
-				time.sleep(1)
-				break
-
-			if(x3 < ball_x2 and x4 > ball_x2 and y4 > ball_y1):
-				time.sleep(1)
-				break
-
-			if (level == 1 and score ==200):
-				return score
-			if (level == 2 and score == 600):
-				return score
-
-			if not button_L.value:
-				ball_x1 -= 20
-				ball_x2 -= 20
-			if not button_R.value:
-				ball_x1 += 20
-				ball_x2 += 20
-			if y2 <= 240:
-				y1 = y1 +speed
-				y2 = y2 +speed
-				y3 = y3 +speed
-				y4 = y4 +speed
-			else:
-				score += 10
-				size = random.randint(20,40)
-				y1 = 0
-				y2 = y1+size
-				x1 = random.randint(0,220)
-				x2 = x1+size
-				size = random.randint(20,40)
-				y3 = 0
-				y4 = y3+size
-				x3 = random.randint(0,220)
-				x4 = x3+size
-	draw.text((20, 20), "Game Over", font=fnt, fill=udlr_fill)
-	draw.text((40, 60), "Score:", font=fnt, fill=udlr_fill)
-	draw.text((150, 60), str(score), font=fnt, fill=udlr_fill)
-	draw.text((40, 100), "play Again", font=fnt, fill=udlr_fill)
-	disp.image(image)
-	return 0
 B_color = "#FF00FF"
 I_color = udlr_fill
 A_color = udlr_fill
