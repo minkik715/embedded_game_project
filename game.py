@@ -230,7 +230,7 @@ while True:
 		color_list[tmp % 4+1] = color_list[tmp%4]
 		color_list[tmp%4] = color
 
-	 if not button_D.value:
+	if not button_D.value:
 		color = color_list[tmp % 4]
 		color_list[tmp % 4] = color_list[tmp % 4 + 1]
 		color_list[tmp % 4 + 1] = color
