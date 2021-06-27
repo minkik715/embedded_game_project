@@ -92,7 +92,7 @@ x2 = x1+size
 y1 = 0
 y2 = y1 + size
 
-def beginner_v_game(x1,x2,y1,y2,speed):
+def game_begin_inter(x1,x2,y1,y2,speed):
 	ball_x1 = 110
 	ball_x2 = 130
 	ball_y1 = 210
@@ -100,6 +100,37 @@ def beginner_v_game(x1,x2,y1,y2,speed):
 	draw.text((20, 20), "Beginner Version", font=fnt, fill=udlr_fill)
 	disp.image(image)
 	time.sleep(2)
+	score = 0
+	while(True):
+		rcolor = tuple(int(x * 255) for x in hsv_to_rgb(random.random(), 1, 1))
+		draw.ellipse((x1, y1, x2, y2), outline=button_outline, fill=rcolor)
+		draw.ellipse((ball_x1, ball_y1, ball_x2, ball_y2), outline=button_outline, fill=rcolor)
+		disp.image(image)
+		draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
+		disp.image(image)
+		if(x2 > ball_x1 and x2 < ball_x2 and y2 > ball_y1):
+			time.sleep(1)
+			return score
+
+		if(x1 < ball_x2 and x2 > ball_x2 and y2 > ball_y1):
+			time.sleep(1)
+			return score
+		if not button_L.value:
+			ball_x1 -= 20
+			ball_x2 -= 20
+		if not button_R.value:
+			ball_x1 += 20
+			ball_x2 += 20
+		if y1 <= 260:
+			y1 = y1 +speed
+			y2 = y2 +speed
+		else:
+			score += 10
+			size = random.randint(20,40)
+			y1 = 0
+			y2 = y1+size
+			x1 = random.randint(0,220)
+			x2 = x1+size
 	
 def play_game(x1,x2,y1,y2,speed,level,score):
 	ball_x1 = 110
@@ -238,13 +269,11 @@ while True:
 	if not button_A.value:
 		draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 		disp.image(image)
-		score = play_game(x1,x2,y1,y2,40,1,0) 
-		if(score):
-			score = play_game(x1,x2,y1,y2,60,2,score)
-			if(score):
-				score = play_game(x1,x2,y1,y2,60,3,score)
-		draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
-		disp.image(image)
+		score = game_begin_inter(x1,x2,y1,y2,20)
+		draw.text((20, 20), "score", font=fnt, fill=udlr_fill)
+		draw.text((100, 20), str(score), font=fnt, fill=udlr_fill)
+		time.sleep(4)
+		
 
 
 
