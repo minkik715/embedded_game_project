@@ -212,6 +212,7 @@ B_color = "#FF00FF"
 I_color = udlr_fill
 A_color = udlr_fill
 E_color = udlr_fill
+tmp = 100
 color_list = [B_color, I_color, A_color, E_color]
 def intro(B_color, I_color , A_color , E_color):
     draw.text((20, 20), "Welcome", font=fnt, fill=udlr_fill)
@@ -223,7 +224,6 @@ def intro(B_color, I_color , A_color , E_color):
 while True:
     intro(color_list[0], color_list[1] , color_list[2] , color_list[3])
     disp.image(image)
-    tmp = 100
     if not button_U.value:
         color = color_list[tmp%4]
         color_list[tmp % 4] = color_list[tmp%4-1]
