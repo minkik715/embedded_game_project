@@ -180,7 +180,7 @@ def game_begin_inter(x1,x2,y1,y2,speed,name):
 		if not button_D.value:
 			ball_y1 += 20
 			ball_y2 += 20
-		if y1 <= 240:
+		if y1 <= 250:
 			y1 = y1 +speed
 			y2 = y2 +speed
 		else:
