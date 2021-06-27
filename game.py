@@ -179,8 +179,8 @@ def play_game(x1,x2,y1,y2,speed,level,score):
 			if y2 <= 240:
 				y1 = y1 +speed
 				y2 = y2 +speed
-				y3 = y4 +speed
-				y3 = y4 +speed
+				y3 = y3 +speed
+				y4 = y4 +speed
 			else:
 				score += 10
 				size = random.randint(20,40)
@@ -190,7 +190,7 @@ def play_game(x1,x2,y1,y2,speed,level,score):
 				x2 = x1+size
 				size = random.randint(20,40)
 				y3 = 0
-				y4 = y4+size
+				y4 = y3+size
 				x3 = random.randint(0,220)
 				x4 = x3+size
 	draw.text((20, 20), "Game Over", font=fnt, fill=udlr_fill)
