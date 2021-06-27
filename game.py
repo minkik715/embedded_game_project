@@ -121,7 +121,7 @@ def play_game(x1,x2,y1,y2,speed,level):
 		if(x1 < ball_x2 and x2 > ball_x2 and y2 > ball_y1):
 			break
 	
-		if (level = 1 and score ==200):
+		if (level == 1 and score ==200):
 			break
 			return 1
 		if not button_L.value:
@@ -145,6 +145,6 @@ def play_game(x1,x2,y1,y2,speed,level):
 	disp.image(image)
 	return 0
 
-if(play_game(x1,x2,y1,y2,20,1):
+if(play_game(x1,x2,y1,y2,20,1)):
    play_game(x1,x2,y1,y2,40,2)
 	
