@@ -216,7 +216,7 @@ tmp = 100
 color_list = [B_color, I_color, A_color, E_color]
 def intro(B_color, I_color , A_color , E_color):
     draw.text((20, 20), "Welcome", font=fnt, fill=udlr_fill)
-    draw.text((40, 50), "Avoid balls:", font=fnt, fill=udlr_fill)
+    draw.text((20, 50), "Avoid balls", font=fnt, fill=udlr_fill)
     draw.text((20, 80), "Beginner", font=fnt, fill=B_color)
     draw.text((20, 110), "Intermediate ", font=fnt, fill=I_color)
     draw.text((20, 140), "Advanced ", font=fnt, fill=A_color)
@@ -226,15 +226,15 @@ while True:
     disp.image(image)
     if not button_U.value:
 	tmp = tmp - 1
-        color = color_list[tmp%4]
-        color_list[tmp % 4+1] = color_list[tmp%4]
-        color_list[tmp%4] = color
+	color = color_list[tmp%4]
+	color_list[tmp % 4+1] = color_list[tmp%4]
+	color_list[tmp%4] = color
         
     if not button_D.value:
-        color = color_list[tmp % 4]
-        color_list[tmp % 4] = color_list[tmp % 4 + 1]
-        color_list[tmp % 4 + 1] = color
-        tmp = tmp + 1
+	color = color_list[tmp % 4]
+	color_list[tmp % 4] = color_list[tmp % 4 + 1]
+	color_list[tmp % 4 + 1] = color
+	tmp = tmp + 1
 
 
 score = play_game(x1,x2,y1,y2,40,1,0) 
