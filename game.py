@@ -131,35 +131,40 @@ def game_begin_inter(x1,x2,y1,y2,speed,name):
 		draw.ellipse((x1, y1, x2, y2), outline=button_outline, fill=rcolor)
 		draw.ellipse((ball_x1, ball_y1, ball_x2, ball_y2), outline=button_outline, fill=udlr_fill)
 		disp.image(image)
+		#1
 		if(x2 >= ball_x1 and x2 <= ball_x2 and y2 >= ball_y1 and y2 <= ball_y2):
 			time.sleep(1)
 			return score
-
+ 		#3
 		if(x1 <= ball_x2 and x1 >= ball_x1 and y2 >= ball_y1 and y2 <= ball_y2):
 			time.sleep(1)
 			return score
-		
+		#2
 		if(x1 >= ball_x1 and x2 <= ball_x2 and y2 >= ball_y1 and y2 <= ball_y2):
 			time.sleep(1)
 			return score
-		
+		#4
 		if(y1 >= ball_y1 and y2 <= ball_y2 and x2 >= ball_x1 and x2 <= ball_x2):
 			time.sleep(1)
 			return score
-		
+		#5
 		if(y1 <= ball_y2 and y1 >= ball_y1 and x2 >= ball_x1 and x2 <= ball_x2):
 			time.sleep(1)
 			return score
-		
+		#6
 		if(x1 >= ball_x1 and x2 <= ball_x2 and y1 <= ball_y2 and y1 >= ball_y1):
 			time.sleep(1)
 			return score
-		
+		#7
 		if(x1 <= ball_x2 and x1 >= ball_x1 and  y1 <= ball_y2 and y1 >= ball_y1):
 			time.sleep(1)
 			return score
-		
+		#8
 		if(y1 >= ball_y1 and y2 <= ball_y2 and x1 <= ball_x2 and x1 >= ball_x1):
+			time.sleep(1)
+			return score
+		#9
+		if(y1 >= ball_y1 and y2 <= ball_y2 and x1 >= ball_x1 and x2 <= ball_x2):
 			time.sleep(1)
 			return score
 		
