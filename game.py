@@ -99,7 +99,7 @@ def game_begin_inter(x1,x2,y1,y2,speed,name):
 	ball_x2 = 130
 	ball_y1 = 210
 	ball_y2 = 230
-	draw.text((0, 20), "name", font=fnt, fill=udlr_fill)
+	draw.text((0, 20), name, font=fnt, fill=udlr_fill)
 	disp.image(image)
 	time.sleep(2)
 	score = 0
