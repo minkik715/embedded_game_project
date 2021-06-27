@@ -208,20 +208,6 @@ def play_game(x1,x2,y1,y2,speed,level,score):
 	draw.text((40, 100), "play Again", font=fnt, fill=udlr_fill)
 	disp.image(image)
 	return 0
-score = play_game(x1,x2,y1,y2,40,1,0) 
-if(score):
-	score = play_game(x1,x2,y1,y2,60,2,score)
-	if(score):
-		score = play_game(x1,x2,y1,y2,60,3,score)
-
-if not button_A.value:
-	score = play_game(x1,x2,y1,y2,40,1,0) 
-	if(score):
-		score = play_game(x1,x2,y1,y2,60,2,score)
-		if(score):
-			score = play_game(x1,x2,y1,y2,60,3,score)
-	            	draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
-            		disp.image(image)
 B_color = "#FF00FF"
 I_color = udlr_fill
 A_color = udlr_fill
@@ -248,6 +234,21 @@ while True:
         color_list[tmp % 4] = color_list[tmp % 4 + 1]
         color_list[tmp % 4 + 1] = color
         tmp = tmp + 1
+
+
+score = play_game(x1,x2,y1,y2,40,1,0) 
+if(score):
+	score = play_game(x1,x2,y1,y2,60,2,score)
+	if(score):
+		score = play_game(x1,x2,y1,y2,60,3,score)
+
+if not button_A.value:
+	score = play_game(x1,x2,y1,y2,40,1,0) 
+	if(score):
+		score = play_game(x1,x2,y1,y2,60,2,score)
+		if(score):
+			score = play_game(x1,x2,y1,y2,60,3,score)
+
 
 
 
