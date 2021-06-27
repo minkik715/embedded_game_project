@@ -112,6 +112,8 @@ while(True):
 	disp.image(image)
 	if(x2 > ball_x1 and x2 < ball_x2 and y2 > ball_y1):
 		break
+	if(x1 < ball_x2 and x2 < ball_x2 and y2 > ball_y1):
+		break
 		
 	if not button_L.value:
 		ball_x1 -= 20
