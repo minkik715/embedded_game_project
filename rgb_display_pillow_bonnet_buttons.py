@@ -126,5 +126,8 @@ while(True):
 	draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 	disp.image(image)
 	
+	if(x2 > ball_x1 and x2 < ball_x2 and y2 < ball_y1):
+		break
+	
 
 
