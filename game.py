@@ -107,7 +107,7 @@ def play_game(x1,x2,y1,y2,speed,level,score):
 	x3 = random.randint(0,220)
 	x4 = x3+size
 	while(True):
-		if(level <=2)
+		if(level <=2):
 			draw.ellipse((x1, y1, x2, y2), outline=button_outline, fill=udlr_fill)
 			draw.ellipse((ball_x1, ball_y1, ball_x2, ball_y2), outline=button_outline, fill=button_fill)
 			disp.image(image)
