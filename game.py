@@ -108,7 +108,7 @@ def play_game(x1,x2,y1,y2,speed,level):
 	score = 0
 	draw.text((20, 20), "Level", font=fnt, fill=udlr_fill)
 	draw.text((80, 20), str(level), font=fnt, fill=udlr_fill)
-	time.sleep(1)
+	time.sleep(2)
 	while(True):
 		draw.ellipse((x1, y1, x2, y2), outline=button_outline, fill=udlr_fill)
 		draw.ellipse((ball_x1, ball_y1, ball_x2, ball_y2), outline=button_outline, fill=button_fill)
@@ -122,8 +122,8 @@ def play_game(x1,x2,y1,y2,speed,level):
 			break
 	
 		if (level == 1 and score ==200):
-			break
 			return 1
+			
 		if not button_L.value:
 			ball_x1 -= 20
 			ball_x2 -= 20
