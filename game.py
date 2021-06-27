@@ -92,6 +92,15 @@ x2 = x1+size
 y1 = 0
 y2 = y1 + size
 
+def beginner_v_game(x1,x2,y1,y2,speed):
+	ball_x1 = 110
+	ball_x2 = 130
+	ball_y1 = 210
+	ball_y2 = 230
+	draw.text((20, 20), "Beginner Version", font=fnt, fill=udlr_fill)
+	disp.image(image)
+	time.sleep(2)
+	
 def play_game(x1,x2,y1,y2,speed,level,score):
 	ball_x1 = 110
 	ball_x2 = 130
@@ -211,3 +220,12 @@ if not button_A.value:
 		score = play_game(x1,x2,y1,y2,60,2,score)
 		if(score):
 			score = play_game(x1,x2,y1,y2,60,3,score)
+while True:
+    draw.text((20, 20), "Welcome", font=fnt, fill=udlr_fill)
+    draw.text((40, 50), "Avoid balls:", font=fnt, fill=udlr_fill)
+    draw.text((20, 80), "Beginner", font=fnt, fill=udlr_fill)
+    draw.text((20, 110), "Intermediate ", font=fnt, fill=udlr_fill)
+    draw.text((20, 140), "Advanced ", font=fnt, fill=udlr_fill)
+    draw.text((20, 170), "Expert", font=fnt, fill=udlr_fill)
+    draw.text((20, 200), "Hell", font=fnt, fill=udlr_fill)
+    disp.image(image)
