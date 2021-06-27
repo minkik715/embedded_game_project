@@ -126,7 +126,7 @@ def play_game(x1,x2,y1,y2,speed,level,score):
 			y1 = y1 +speed
 			y2 = y2 +speed
 		else:
-		 	score += 10
+			score += 10
 			y1 = 0
 			y2 = 20
 			x1 = random.randint(0,220)
