@@ -221,7 +221,7 @@ def intro(B_color, I_color , A_color , E_color):
     draw.text((20, 140), "Advanced ", font=fnt, fill=A_color)
     draw.text((20, 170), "Expert", font=fnt, fill=E_color)
 while True:
-    intro(B_color, I_color , A_color , E_color)
+    intro(color_list[0], color_list[1] , color_list[2] , color_list[3])
     disp.image(image)
     tmp = 100
     if not button_U.value:
