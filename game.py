@@ -295,8 +295,8 @@ def game_expert(x1, x2, y1, y2, speed, name):
 
 
 def intro(B_color, I_color, A_color, E_color):
-    draw.text((20, 20), "Welcome", font=fnt, fill=basic_color)
-    draw.text((20, 50), "Avoid balls", font=fnt, fill=basic_color)
+    draw.text((20, 20), "Welcome", font=fnt, fill="#ff6f00")
+    draw.text((20, 50), "Avoid balls", font=fnt, fill="#00b3ff")
     draw.text((20, 80), "Beginner", font=fnt, fill=B_color)
     draw.text((20, 110), "Intermediate ", font=fnt, fill=I_color)
     draw.text((20, 140), "Advanced ", font=fnt, fill=A_color)
