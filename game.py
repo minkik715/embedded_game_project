@@ -236,7 +236,7 @@ def game_begin_inter(x1,x2,y1,y2,speed,name):
 		draw.ellipse((ball_x1, ball_y1, ball_x2, ball_y2), outline=button_outline, fill=udlr_fill)
 		disp.image(image)
 		check = crash_ball(x1, x2, y1, y1, ball_x1, ball_x2, ball_y1, ball_y2,score)
-		if(check):
+		if(check >= 0):
 			return check
 		control_userball(ball_x1,ball_x2,ball_y1,ball_y2)
 		if y1 <= 250:
@@ -297,9 +297,9 @@ def game_expert(x1,x2,y1,y2,speed,name):
 		check = crash_ball(x1, x2, y1, y1, ball_x1, ball_x2, ball_y1, ball_y2,score)
 		check2 = crash_ball(x3, x4, y3, y4, ball_x1, ball_x2, ball_y1, ball_y2,score)
 		
-		if(check):
+		if(check >= 0):
 			return check
-		if(check2):
+		if(check >= 0):
 			return check2
 		ball_x1,ball_x2,ball_y1,ball_y2 = control_userball(ball_x1,ball_x2,ball_y1,ball_y2)
 		x1, x2, y1, y2,loc,score = control_ball(x1, x2, y1, y2, speed, loc, score)
