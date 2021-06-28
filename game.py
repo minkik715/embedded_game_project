@@ -115,7 +115,7 @@ def game_end(score):
 	draw.text((20, 60), "Score:", font=fnt, fill=udlr_fill)
 	draw.text((150, 60), str(score), font=fnt, fill=udlr_fill)
 	disp.image(image)
-	time.sleep(4)
+	time.sleep(3)
 	remove_screen()
 
 	
@@ -238,18 +238,7 @@ def game_begin_inter(x1,x2,y1,y2,speed,name):
 		check = crash_ball(x1, x2, y1, y1, ball_x1, ball_x2, ball_y1, ball_y2,score)
 		if(check):
 			return check
-		if not button_L.value:
-			ball_x1 -= 10
-			ball_x2 -= 10
-		if not button_R.value:
-			ball_x1 += 10
-			ball_x2 += 10
-		if not button_U.value:
-			ball_y1 -= 10
-			ball_y2 -= 10
-		if not button_D.value:
-			ball_y1 += 10
-			ball_y2 += 10
+		control_userball(ball_x1,ball_x2,ball_y1,ball_y2)
 		if y1 <= 250:
 			y1 = y1 +speed
 			y2 = y2 +speed
@@ -258,7 +247,7 @@ def game_begin_inter(x1,x2,y1,y2,speed,name):
 			size = random.randint(20,40)
 			y1 = 0
 			y2 = y1+size
-			x1 = random.randint(0,220)
+			x1 = random.randint(0,200)
 			x2 = x1+size
 		remove_screen()
 		time.sleep(0.01)
@@ -307,61 +296,14 @@ def game_expert(x1,x2,y1,y2,speed,name):
 		disp.image(image)
 		check = crash_ball(x1, x2, y1, y1, ball_x1, ball_x2, ball_y1, ball_y2,score)
 		check2 = crash_ball(x3, x4, y3, y4, ball_x1, ball_x2, ball_y1, ball_y2,score)
+		
 		if(check):
 			return check
 		if(check2):
 			return check2
-		if not button_L.value:
-			ball_x1 -= 10
-			ball_x2 -= 10
-		if not button_R.value:
-			ball_x1 += 10
-			ball_x2 += 10
-		if not button_U.value:
-			ball_y1 -= 10
-			ball_y2 -= 10
-		if not button_D.value:
-			ball_y1 += 10
-			ball_y2 += 10
-		if loc == 1 and y1 <= 250:
-			y1 = y1 +speed
-			y2 = y2 +speed
-		elif loc ==2 and x1 <= 250:
-			x1 = x1 + speed
-			x2 = x2 + speed
-		elif loc == 3 and y2 >= -10:
-			y1 = y1 - speed
-			y2 = y2 - speed
-		elif loc == 4 and x2 >= -10:
-			x1 = x1 - speed
-			x2 = x2 - speed
-		else:
-			score += 10
-			loc = random_location()
-			if loc == 1:
-				size = random.randint(20,40)
-				y1 = 0
-				y2 = y1+size
-				x1 = random.randint(0,200)
-				x2 = x1+size
-			if loc == 2:
-				size = random.randint(20,40)
-				y1 = random.randint(0,200)
-				y2 = y1+size
-				x1 = 0
-				x2 = x1+size			
-			if loc == 3:
-				size = random.randint(20,40)
-				y1 = 240 - size
-				y2 = 240
-				x1 = random.randint(0,200)
-				x2 = x1+size
-			if loc == 4:
-				size = random.randint(20,40)
-				y1 = random.randint(0,200)
-				y2 = y1+size
-				x1 = 240-size
-				x2 = 240
+		ball_x1,ball_x2,ball_y1,ball_y2 = control_userball(ball_x1,ball_x2,ball_y1,ball_y2)
+		x1, x2, y1, y2,loc,score = control_ball(x1, x2, y1, y2, speed, loc, score)
+		x1, x2, y1, y2,loc2,score = control_ball(x1, x2, y1, y2, speed, loc2, score)
 		remove_screen()
 		time.sleep(0.01)
 	
