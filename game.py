@@ -281,7 +281,7 @@ def game_advance(x1,x2,y1,y2,speed,name):
 		check = crash_ball(x1, x2, y1, y1, ball_x1, ball_x2, ball_y1, ball_y2,score)
 		if(check):
 			return check
-		ball_x1,ball_x2,ball_y1,ball_y2 = control_userball(ball_x1,ball_x2,ball_y1,ball_y2):
+		ball_x1,ball_x2,ball_y1,ball_y2 = control_userball(ball_x1,ball_x2,ball_y1,ball_y2)
 		x1, x2, y1, y2 = control_ball(x1, x2, y1, y2, speed, loc, score)
 		remove_screen()
 		time.sleep(0.01)
