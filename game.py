@@ -123,7 +123,43 @@ def crash_ball(x1, x2, y1, y2, ball_x1, ball_x2, ball_y1, ball_y2, score):
     length = math.sqrt(((cent_x-ball_cent_x)**2+(cent_y-ball_cent_y)**2))
     if(length <= (x_r+ball_x_r)):
         time.sleep(1)
-        return score	
+        return score
+    # 1
+    elif (x2 >= ball_x1 and x2 <= ball_x2 and y2 >= ball_y1 and y2 <= ball_y2):
+        time.sleep(1)
+        return score
+    # 3
+    elif (x1 <= ball_x2 and x1 >= ball_x1 and y2 >= ball_y1 and y2 <= ball_y2):
+        time.sleep(1)
+        return score
+    # 2
+    elif (x1 >= ball_x1 and x2 <= ball_x2 and y2 >= ball_y1 and y2 <= ball_y2):
+        time.sleep(1)
+        return score
+    # 4
+    elif (y1 >= ball_y1 and y2 <= ball_y2 and x2 >= ball_x1 and x2 <= ball_x2):
+        time.sleep(1)
+        return score
+    # 5
+    elif (y1 <= ball_y2 and y1 >= ball_y1 and x2 >= ball_x1 and x2 <= ball_x2):
+        time.sleep(1)
+        return score
+    # 6
+    elif (x1 >= ball_x1 and x2 <= ball_x2 and y1 <= ball_y2 and y1 >= ball_y1):
+        time.sleep(1)
+        return score
+    # 7
+    elif (x1 <= ball_x2 and x1 >= ball_x1 and y1 <= ball_y2 and y1 >= ball_y1):
+        time.sleep(1)
+        return score
+    # 8
+    elif (y1 >= ball_y1 and y2 <= ball_y2 and x1 <= ball_x2 and x1 >= ball_x1):
+        time.sleep(1)
+        return score
+    # 9
+    elif (y1 <= ball_y1 and y2 >= ball_y2 and x1 <= ball_x1 and x2 >= ball_x2):
+        time.sleep(1)
+        return score
     else:
         return -1
 
