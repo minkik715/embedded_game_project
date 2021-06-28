@@ -120,7 +120,7 @@ def crash_ball(x1, x2, y1, y2, ball_x1, ball_x2, ball_y1, ball_y2, score):
     ball_cent_y = (ball_y1 + ball_x2)/2
     x_r = cent_x - x1
     ball_x_r = ball_cent_x - ball_x1
-    length = sqrt(((cent_x-ball_cent_x)**2+(cent_y-ball_cent_y)**2))
+    length = math.sqrt(((cent_x-ball_cent_x)**2+(cent_y-ball_cent_y)**2))
     if(length <= x_r+ball_x_r):
         time.sleep(1)
         return score	
