@@ -311,12 +311,12 @@ while True:
 			remove_screen()
 		if(tmp%4 == 1):
 			name = "Inter_Ver"
-			score = game_begin_inter(x1,x2,y1,y2,60,name)
+			score = game_begin_inter(x1,x2,y1,y2,40,name)
 			game_end(score)
 			remove_screen()
 		if(tmp%4 == 2):
 			name = "Advance_Ver"
-			score = game_advance(x1,x2,y1,y2,60,name)
+			score = game_advance(x1,x2,y1,y2,40,name)
 			game_end(score)
 			remove_screen()
 		if(tmp%4 == 3):
