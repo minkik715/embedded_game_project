@@ -80,7 +80,11 @@ button_outline = "#FFFFFF"
 button_fill = "#FF00FF"
 basic_color = "#002aff"
 fnt = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 30)
-# SET
+
+
+
+
+# SET x1, x2, y1, y2 는 장애물 ball_x1,ball_x2,ball_y1,ball_y2는 유저의 공
 x1 = random.randint(0, 180)
 size = random.randint(20, 60)
 x2 = x1 + size
@@ -94,16 +98,31 @@ tmp = 100
 color_list = [B_color, I_color, A_color, E_color]
 
 
+
+
+
+# 사분면중 어디를 선택할지 고르는 함수
 def random_location():
     return random.randint(1, 4)
 
+
+
+
+# 사용자의 위치를 정해주는 함수
 def set_up_user_loc(ball_x1,ball_x2,ball_y1,ball_y2):
     return ball_x1, ball_x2, ball_y1, ball_y2
+
+
+
+# 화면을 지우는 함수
 def remove_screen():
     draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
     disp.image(image)
 
-
+	
+	
+	
+# 게임이 종료되면 나오는 화면
 def game_end(score):
     draw.text((20, 20), "Game Over", font=fnt, fill=basic_color)
     draw.text((20, 60), "Score:", font=fnt, fill=basic_color)
@@ -111,8 +130,11 @@ def game_end(score):
     disp.image(image)
     time.sleep(3)
     remove_screen()
-
-
+	
+	
+	
+	
+# 유저의 공과 장애물이 부딪혔는지 
 def crash_ball(x1, x2, y1, y2, ball_x1, ball_x2, ball_y1, ball_y2, score):
     cent_x = (x1+x2)/2
     cent_y = (y1+y2)/2
@@ -164,6 +186,9 @@ def crash_ball(x1, x2, y1, y2, ball_x1, ball_x2, ball_y1, ball_y2, score):
         return -1
 
 
+
+
+# 장애물이 떨어지는 함수
 def falling_ball_mv(x1, x2, y1, y2, speed, loc, score):
     if loc == 1 and y1 <= 250:
         y1 = y1 + speed
@@ -207,6 +232,10 @@ def falling_ball_mv(x1, x2, y1, y2, speed, loc, score):
     return x1, x2, y1, y2, loc, score
 
 
+
+
+
+# 유저의 공을 컨트롤 하는 함수
 def control_userball(ball_x1, ball_x2, ball_y1, ball_y2, speed):
     if not button_L.value:
         ball_x1 -= speed
@@ -223,6 +252,9 @@ def control_userball(ball_x1, ball_x2, ball_y1, ball_y2, speed):
     return ball_x1, ball_x2, ball_y1, ball_y2
 
 
+
+
+# beginner과 intermediate 게임 실햄 함수
 def game_begin_inter(x1, x2, y1, y2, speed, name):
     ball_x1,ball_x2,ball_y1,ball_y2 = set_up_user_loc(110, 130, 210, 230)
 
@@ -253,6 +285,10 @@ def game_begin_inter(x1, x2, y1, y2, speed, name):
         time.sleep(0.01)
 
 
+	
+	
+	
+# Advance 게임 실햄 함수
 def game_advance(x1, x2, y1, y2, speed, name):
 
     ball_x1, ball_x2, ball_y1, ball_y2 = set_up_user_loc(110, 130, 210, 230)
@@ -274,8 +310,11 @@ def game_advance(x1, x2, y1, y2, speed, name):
         x1, x2, y1, y2, loc, score = falling_ball_mv(x1, x2, y1, y2, speed, loc, score)
         remove_screen()
         time.sleep(0.01)
-
-
+	
+	
+	
+	
+# Expert 게임 실햄 함수
 def game_expert(x1, x2, y1, y2, speed, name):
     ball_x1, ball_x2, ball_y1, ball_y2 = set_up_user_loc(110, 130, 210, 230)
     x3,x4,y3,y4 = set_up_user_loc(0, 40, 0, 40)
@@ -303,8 +342,12 @@ def game_expert(x1, x2, y1, y2, speed, name):
         x3, x4, y3, y4, loc2, score = falling_ball_mv(x3, x4, y3, y4, speed, loc2, score)
         remove_screen()
         time.sleep(0.01)
-
-
+	
+	
+	
+	
+	
+# 게임 인트로 화면 함수
 def intro(B_color, I_color, A_color, E_color):
     draw.text((20, 20), "Welcome", font=fnt, fill="#ff6f00")
     draw.text((20, 50), "Avoid balls", font=fnt, fill="#00b3ff")
