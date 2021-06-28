@@ -160,7 +160,7 @@ def crash_ball(x1, x2, y1, y2, ball_x1, ball_x2, ball_y1, ball_y2,score):
 	else:
 		return 0
 
-def control_ball(x1, x2, y1, y2, speed,loc):
+def control_ball(x1, x2, y1, y2, speed,loc,score):
 	if loc == 1 and y1 <= 250:
 		y1 = y1 +speed
 		y2 = y2 +speed
@@ -201,7 +201,26 @@ def control_ball(x1, x2, y1, y2, speed,loc):
 			x1 = 240-size
 			x2 = 240
 	return x1, x2, y1, y2	
-	
+
+
+def control_userball(ball_x1,ball_x2,ball_y1,ball_y2):
+	if not button_L.value:
+		ball_x1 -= 10
+		ball_x2 -= 10
+	if not button_R.value:
+		ball_x1 += 10
+		ball_x2 += 10
+	if not button_U.value:
+		ball_y1 -= 10
+		ball_y2 -= 10
+	if not button_D.value:
+		ball_y1 += 10
+		ball_y2 += 10
+	return ball_x1,ball_x2,ball_y1,ball_y2
+
+
+
+
 def game_begin_inter(x1,x2,y1,y2,speed,name):
 	ball_x1 = 110
 	ball_x2 = 130
@@ -262,19 +281,8 @@ def game_advance(x1,x2,y1,y2,speed,name):
 		check = crash_ball(x1, x2, y1, y1, ball_x1, ball_x2, ball_y1, ball_y2,score)
 		if(check):
 			return check
-		if not button_L.value:
-			ball_x1 -= 10
-			ball_x2 -= 10
-		if not button_R.value:
-			ball_x1 += 10
-			ball_x2 += 10
-		if not button_U.value:
-			ball_y1 -= 10
-			ball_y2 -= 10
-		if not button_D.value:
-			ball_y1 += 10
-			ball_y2 += 10
-		x1, x2, y1, y2 = control_ball(x1, x2, y1, y2, speed, loc)
+		ball_x1,ball_x2,ball_y1,ball_y2 = control_userball(ball_x1,ball_x2,ball_y1,ball_y2):
+		x1, x2, y1, y2 = control_ball(x1, x2, y1, y2, speed, loc, score)
 		remove_screen()
 		time.sleep(0.01)
 		
