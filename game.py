@@ -238,7 +238,7 @@ def game_begin_inter(x1,x2,y1,y2,speed,name):
 		check = crash_ball(x1, x2, y1, y1, ball_x1, ball_x2, ball_y1, ball_y2,score)
 		if(check >= 0):
 			return check
-		control_userball(ball_x1,ball_x2,ball_y1,ball_y2)
+		ball_x1,ball_x2,ball_y1,ball_y2 = control_userball(ball_x1,ball_x2,ball_y1,ball_y2)
 		if y1 <= 250:
 			y1 = y1 +speed
 			y2 = y2 +speed
