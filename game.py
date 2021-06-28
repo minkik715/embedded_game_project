@@ -193,7 +193,7 @@ def game_begin_inter(x1,x2,y1,y2,speed,name):
 		remove_screen()
 		time.sleep(0.01)
 
-def game_advance(x1,x2,y1,y2,speed,name)
+def game_advance(x1,x2,y1,y2,speed,name):
 	ball_x1 = 110
 	ball_x2 = 130
 	ball_y1 = 110
