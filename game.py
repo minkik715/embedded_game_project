@@ -158,7 +158,7 @@ def crash_ball(x1, x2, y1, y2, ball_x1, ball_x2, ball_y1, ball_y2,score):
 		time.sleep(1)
 		return score
 	else:
-		return 0
+		return -1
 
 def control_ball(x1, x2, y1, y2, speed,loc,score):
 	if loc == 1 and y1 <= 250:
@@ -279,7 +279,7 @@ def game_advance(x1,x2,y1,y2,speed,name):
 		draw.ellipse((ball_x1, ball_y1, ball_x2, ball_y2), outline=button_outline, fill=udlr_fill)
 		disp.image(image)
 		check = crash_ball(x1, x2, y1, y1, ball_x1, ball_x2, ball_y1, ball_y2,score)
-		if(check):
+		if check>=0:
 			return check
 		ball_x1,ball_x2,ball_y1,ball_y2 = control_userball(ball_x1,ball_x2,ball_y1,ball_y2)
 		x1, x2, y1, y2,loc = control_ball(x1, x2, y1, y2, speed, loc, score)
