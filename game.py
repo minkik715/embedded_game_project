@@ -83,8 +83,7 @@ button_outline = "#FFFFFF"
 
 fnt = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 30)
 
-def random_location():
-	return random.randint(1,4)
+
 # SET
 x1 = random.randint(0, 180)
 size = random.randint(20,60)
@@ -97,6 +96,10 @@ A_color = udlr_fill
 E_color = udlr_fill
 tmp = 100
 color_list = [B_color, I_color, A_color, E_color]
+
+
+def random_location():
+	return random.randint(1,4)
 
 
 
@@ -231,6 +234,87 @@ def game_advance(x1,x2,y1,y2,speed,name):
 		if not button_D.value:
 			ball_y1 += 10
 			ball_y2 += 10
+		x1, x2, y1, y2 = control_ball(x1, x2, y1, y2, speed)
+		remove_screen()
+		time.sleep(0.01)
+		
+		
+def control_ball(x1, x2, y1, y2, speed):
+	if loc == 1 and y1 <= 250:
+		y1 = y1 +speed
+		y2 = y2 +speed
+	elif loc ==2 and x1 <= 250:
+		x1 = x1 + speed
+		x2 = x2 + speed
+	elif loc == 3 and y2 >= -10:
+		y1 = y1 - speed
+		y2 = y2 - speed
+	elif loc == 4 and x2 >= -10:
+		x1 = x1 - speed
+		x2 = x2 - speed
+	else:
+		score += 10
+		loc = random_location()
+		if loc == 1:
+			size = random.randint(20,40)
+			y1 = 0
+			y2 = y1+size
+			x1 = random.randint(0,200)
+			x2 = x1+size
+		if loc == 2:
+			size = random.randint(20,40)
+			y1 = random.randint(0,200)
+			y2 = y1+size
+			x1 = 0
+			x2 = x1+size			
+		if loc == 3:
+			size = random.randint(20,40)
+			y1 = 240 - size
+			y2 = 240
+			x1 = random.randint(0,200)
+			x2 = x1+size
+		if loc == 4:
+			size = random.randint(20,40)
+			y1 = random.randint(0,200)
+			y2 = y1+size
+			x1 = 240-size
+			x2 = 240
+	return x1, x2, y1, y2
+def game_expert(x1,x2,y1,y2,speed,name):
+	ball_x1 = 110
+	ball_x2 = 130
+	ball_y1 = 110
+	ball_y2 = 130
+	draw.text((30, 50), name, font=fnt, fill=udlr_fill)
+	disp.image(image)
+	time.sleep(2)
+	score = 0
+	loc = 1
+	loc2 = 1
+	while(True):
+		rcolor = tuple(int(x * 255) for x in hsv_to_rgb(random.random(), 1, 1))
+		draw.ellipse((x1, y1, x2, y2), outline=button_outline, fill=rcolor)
+		draw.ellipse((x3, y3, x4, y4), outline=button_outline, fill=rcolor)
+		draw.ellipse((ball_x1, ball_y1, ball_x2, ball_y2), outline=button_outline, fill=udlr_fill)
+		disp.image(image)
+		check = crash_ball(x1, x2, y1, y1, ball_x1, ball_x2, ball_y1, ball_y2,score)
+		check2 = crash_ball(x3, x4, y3, y4, ball_x1, ball_x2, ball_y1, ball_y2,score)
+		if(check):
+			return check
+		if(check2):
+			return check2
+		if not button_L.value:
+			ball_x1 -= 10
+			ball_x2 -= 10
+		if not button_R.value:
+			ball_x1 += 10
+			ball_x2 += 10
+		if not button_U.value:
+			ball_y1 -= 10
+			ball_y2 -= 10
+		if not button_D.value:
+			ball_y1 += 10
+			ball_y2 += 10
 		if loc == 1 and y1 <= 250:
 			y1 = y1 +speed
 			y2 = y2 +speed
@@ -272,7 +356,6 @@ def game_advance(x1,x2,y1,y2,speed,name):
 				x2 = 240
 		remove_screen()
 		time.sleep(0.01)
-
 	
 	
 	
