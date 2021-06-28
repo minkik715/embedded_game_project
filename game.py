@@ -77,7 +77,7 @@ draw = ImageDraw.Draw(image)
 draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
 basic_color = "#002aff"
-
+fnt = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 30)
 # SET
 x1 = random.randint(0, 180)
 size = random.randint(20, 60)
