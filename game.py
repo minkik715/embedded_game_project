@@ -75,7 +75,8 @@ draw = ImageDraw.Draw(image)
 
 # Draw a black filled box to clear the image.
 draw.rectangle((0, 0, width, height), outline=0, fill=0)
-
+button_outline = "#FFFFFF"
+button_fill = "#FF00FF"
 basic_color = "#002aff"
 fnt = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 30)
 # SET
