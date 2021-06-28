@@ -303,7 +303,7 @@ def game_expert(x1,x2,y1,y2,speed,name):
 		
 		if(check >= 0):
 			return check
-		if(check >= 0):
+		if(check2 >= 0):
 			return check2
 		ball_x1,ball_x2,ball_y1,ball_y2 = control_userball(ball_x1,ball_x2,ball_y1,ball_y2,15)
 		x1, x2, y1, y2,loc,score = control_ball(x1, x2, y1, y2, speed, loc, score)
