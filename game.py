@@ -116,7 +116,7 @@ def game_end(score):
 	remove_screen()
 
 	
-def crash_ball(x1, x2, y1, y1, ball_x1, ball_x2, ball_y1, ball_y2):
+def crash_ball(x1, x2, y1, y2, ball_x1, ball_x2, ball_y1, ball_y2):
 	
 	 #1
 	if(x2 >= ball_x1 and x2 <= ball_x2 and y2 >= ball_y1 and y2 <= ball_y2):
