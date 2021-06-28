@@ -177,17 +177,17 @@ def game_begin_inter(x1,x2,y1,y2,speed,name):
 		if(check):
 			return check
 		if not button_L.value:
-			ball_x1 -= 20
-			ball_x2 -= 20
+			ball_x1 -= 10
+			ball_x2 -= 10
 		if not button_R.value:
-			ball_x1 += 20
-			ball_x2 += 20
+			ball_x1 += 10
+			ball_x2 += 10
 		if not button_U.value:
-			ball_y1 -= 20
-			ball_y2 -= 20
+			ball_y1 -= 10
+			ball_y2 -= 10
 		if not button_D.value:
-			ball_y1 += 20
-			ball_y2 += 20
+			ball_y1 += 10
+			ball_y2 += 10
 		if y1 <= 250:
 			y1 = y1 +speed
 			y2 = y2 +speed
@@ -217,19 +217,20 @@ def game_advance(x1,x2,y1,y2,speed,name):
 		draw.ellipse((ball_x1, ball_y1, ball_x2, ball_y2), outline=button_outline, fill=udlr_fill)
 		disp.image(image)
 		check = crash_ball(x1, x2, y1, y1, ball_x1, ball_x2, ball_y1, ball_y2,score)
-		
+		if(check):
+			return check
 		if not button_L.value:
-			ball_x1 -= 20
-			ball_x2 -= 20
+			ball_x1 -= 10
+			ball_x2 -= 10
 		if not button_R.value:
-			ball_x1 += 20
-			ball_x2 += 20
+			ball_x1 += 10
+			ball_x2 += 10
 		if not button_U.value:
-			ball_y1 -= 20
-			ball_y2 -= 20
+			ball_y1 -= 10
+			ball_y2 -= 10
 		if not button_D.value:
-			ball_y1 += 20
-			ball_y2 += 20
+			ball_y1 += 10
+			ball_y2 += 10
 		if loc == 1 and y1 <= 250:
 			y1 = y1 +speed
 			y2 = y2 +speed
