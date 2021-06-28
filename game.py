@@ -282,6 +282,10 @@ def game_expert(x1,x2,y1,y2,speed,name):
 	ball_x2 = 130
 	ball_y1 = 110
 	ball_y2 = 130
+	x3 = 0
+	x4 = 40
+	y3 = 0
+	y4 = 40
 	draw.text((30, 50), name, font=fnt, fill=udlr_fill)
 	disp.image(image)
 	time.sleep(2)
