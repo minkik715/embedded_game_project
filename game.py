@@ -164,7 +164,7 @@ def game_begin_inter(x1,x2,y1,y2,speed,name):
 			time.sleep(1)
 			return score
 		#9
-		if(y1 >= ball_y1 and y2 <= ball_y2 and x1 >= ball_x1 and x2 <= ball_x2):
+		if(y1 <= ball_y1 and y2 >= ball_y2 and x1 <= ball_x1 and x2 >= ball_x2):
 			time.sleep(1)
 			return score
 		
@@ -342,7 +342,7 @@ while True:
 			remove_screen()
 		if(tmp%4 == 2):
 			name = "Advance_Ver"
-			score = game_advance(x1,x2,y1,y2,40,name)
+			score = game_advance(x1,x2,y1,y2,60,name)
 			game_end(score)
 			remove_screen()
 		if(tmp%4 == 3):
