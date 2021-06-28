@@ -227,7 +227,7 @@ def game_begin_inter(x1, x2, y1, y2, speed, name):
         check = crash_ball(x1, x2, y1, y1, ball_x1, ball_x2, ball_y1, ball_y2, score)
         if (check >= 0):
             return check
-        ball_x1, ball_x2, ball_y1, ball_y2 = control_userball(ball_x1, ball_x2, ball_y1, ball_y2, 15)
+        ball_x1, ball_x2, ball_y1, ball_y2 = control_userball(ball_x1, ball_x2, ball_y1, ball_y2, 10)
         if y1 <= 250:
             y1 = y1 + speed
             y2 = y2 + speed
@@ -259,7 +259,7 @@ def game_advance(x1, x2, y1, y2, speed, name):
         check = crash_ball(x1, x2, y1, y1, ball_x1, ball_x2, ball_y1, ball_y2, score)
         if check >= 0:
             return check
-        ball_x1, ball_x2, ball_y1, ball_y2 = control_userball(ball_x1, ball_x2, ball_y1, ball_y2, 15)
+        ball_x1, ball_x2, ball_y1, ball_y2 = control_userball(ball_x1, ball_x2, ball_y1, ball_y2, 10)
         x1, x2, y1, y2, loc, score = falling_ball_mv(x1, x2, y1, y2, speed, loc, score)
         remove_screen()
         time.sleep(0.01)
@@ -287,7 +287,7 @@ def game_expert(x1, x2, y1, y2, speed, name):
             return check
         if (check2 >= 0):
             return check2
-        ball_x1, ball_x2, ball_y1, ball_y2 = control_userball(ball_x1, ball_x2, ball_y1, ball_y2, 15)
+        ball_x1, ball_x2, ball_y1, ball_y2 = control_userball(ball_x1, ball_x2, ball_y1, ball_y2, 10)
         x1, x2, y1, y2, loc, score = falling_ball_mv(x1, x2, y1, y2, speed, loc, score)
         x3, x4, y3, y4, loc2, score = falling_ball_mv(x3, x4, y3, y4, speed, loc2, score)
         remove_screen()
