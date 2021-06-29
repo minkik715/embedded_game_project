@@ -84,18 +84,7 @@ fnt = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 30)
 
 
 
-# SET x1, x2, y1, y2 는 장애물 ball_x1,ball_x2,ball_y1,ball_y2는 유저의 공
-x1 = random.randint(0, 180)
-size = random.randint(20, 60)
-x2 = x1 + size
-y1 = 0
-y2 = y1 + size
-B_color = "#ff0011"
-I_color = basic_color
-A_color = basic_color
-E_color = basic_color
-tmp = 100
-color_list = [B_color, I_color, A_color, E_color]
+
 
 
 
@@ -355,6 +344,25 @@ def intro(B_color, I_color, A_color, E_color):
     draw.text((20, 110), "Intermediate ", font=fnt, fill=I_color)
     draw.text((20, 140), "Advanced ", font=fnt, fill=A_color)
     draw.text((20, 170), "Expert", font=fnt, fill=E_color)
+
+
+
+	
+	
+# SET x1, x2, y1, y2 는 장애물 ball_x1,ball_x2,ball_y1,ball_y2는 유저의 공
+x1 = random.randint(0, 180)
+size = random.randint(20, 60)
+x2 = x1 + size
+y1 = 0
+y2 = y1 + size
+B_color = "#ff0011"
+I_color = basic_color
+A_color = basic_color
+E_color = basic_color
+tmp = 100
+color_list = [B_color, I_color, A_color, E_color]
+
+
 
 
 # main
